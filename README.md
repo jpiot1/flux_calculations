@@ -31,7 +31,7 @@ To install the latest version from GitHub:
 pip install git+https://github.com/jpiot1/flux_calculations.git
 ```
 
-For development (editable) install with tests:
+‼️‼️‼️ For development (editable) install with tests: ‼️‼️‼️
 
 ```bash
 git clone https://github.com/jpiot1/flux_calculations.git
@@ -43,7 +43,7 @@ pip install -e '.[dev]'
 pytest -q
 ```
 
-## Quickstart CLI
+## ‼️‼️‼️ Quickstart CLI ‼️‼️‼️
 
 Process one or more NetCDF files via the built-in pipeline:
 
@@ -56,11 +56,11 @@ python -m ceilfeat.pipeline --in /path/to/input1.nc /path/to/input2.nc \
 * --out: output file or directory. If a directory, filenames are auto-generated.
 * -v, -vv: increase verbosity.
 
-## Python API
+## ‼️‼️‼️ Python API ‼️‼️‼️
 
 ```python
 import xarray as xr
-import ceilfeat as cf
+import fluxcalc as fc
 
 # 1. Open dataset
  ds = xr.open_dataset("input.nc").sortby("time")
@@ -99,7 +99,7 @@ import ceilfeat as cf
 
 1. Fork the repo and create a feature branch.
 2. Write code, tests, and update docs.
-3. Follow style: ruff, mypy, pytest.
+3. Follow style: `ruff`, `mypy`, `pytest`.
 4. Submit a pull request.
 
 ## License
