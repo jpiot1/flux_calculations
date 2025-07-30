@@ -43,19 +43,6 @@ pip install -e '.[dev]'
 pytest -q
 ```
 
-## ‼️‼️‼️ Quickstart CLI ‼️‼️‼️
-
-Process one or more NetCDF files via the built-in pipeline:
-
-```bash
-python -m ceilfeat.pipeline --in /path/to/input1.nc /path/to/input2.nc \
-    --out /path/to/output_dir -vv
-```
-
-* --in: input file(s) or glob(s).
-* --out: output file or directory. If a directory, filenames are auto-generated.
-* -v, -vv: increase verbosity.
-
 ## ‼️‼️‼️ Python API ‼️‼️‼️
 
 ```python
