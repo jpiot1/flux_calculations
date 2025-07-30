@@ -1,6 +1,15 @@
+# SPDX-License-Identifier: LGPL-2.1-or-later
+from __future__ import annotations
+
+import numpy as np
+import pandas as pd
+
+__all__ = ["calculate_momentum_flux"]
+
 def calculate_momentum_flux(df, u_col='U_m_s', v_col='V_m_s', w_col='W_m_s', rho=1.2, freq='30T'):
     """
     Compute tau (momentum flux) over specified windows.
+    
     
     Args:
         df: DataFrame with datetime index and u, v, w columns.
