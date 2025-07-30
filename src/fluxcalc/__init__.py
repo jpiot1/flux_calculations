@@ -14,7 +14,7 @@ try:
     except PackageNotFoundError:  # pragma: no cover
         __version__ = "0.0.0"
 except Exception:  # pragma: no cover
-    __version__ = "0.0.0"
+    __version__ = "0.1.0"
 
 from .io import read_file
 from .tau import calculate_momentum_flux
