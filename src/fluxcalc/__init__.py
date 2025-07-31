@@ -12,9 +12,9 @@ try:
     try:
         __version__ = _version("fluxcalc")
     except PackageNotFoundError:  # pragma: no cover
-        __version__ = "0.1.1"
+        __version__ = "0.1.2"
 except Exception:  # pragma: no cover
-    __version__ = "0.1.1"
+    __version__ = "0.1.2"
 
 from .io import read_file
 from .tau import calculate_momentum_flux
