@@ -31,7 +31,7 @@ To install the latest version from GitHub:
 pip install git+https://github.com/jpiot1/flux_calculations.git
 ```
 
-‼️‼️‼️ For development (editable) install with tests: ‼️‼️‼️
+For development (editable) install with tests:
 
 ```bash
 git clone https://github.com/jpiot1/flux_calculations.git
@@ -41,45 +41,6 @@ python -m venv "$env"
 source "$env/bin/activate"
 pip install -e '.[dev]'
 pytest -q
-```
-
-## ‼️‼️‼️ Python API ‼️‼️‼️
-
-```python
-import xarray as xr
-import fluxcalc as fc
-
-# 1. Open dataset
- ds = xr.open_dataset("input.nc").sortby("time")
-
-# 2. Compute wavelet transforms
- row_wt, col_wt, remnant = cf.get_wavelets(ds.copy(), ds.range.values, ds.time.values)
-
-# 3. Detect clouds & precip
- clouds, precip = cf.get_clouds_and_precip(
-     ds.beta_att.T.values, ds.range.values, ds.time.values
- )
-
-# 4. Flags and threshold
- fog, cloud, rain, clear = cf.get_flags(
-     ds.beta_att.T.values, ds.range.values, ds.time.values
- )
- thresh = cf.get_thresh(remnant, row_wt, col_wt)
-
-# 5. Denoise & extract layers
- clean = cf.remove_noisy_regions(
-     ds.beta_att.T.values, thresh, ds.range.values, ds.time.values
- )
- layers = cf.get_layers(clean.values, clean.range.values)
-
-# 6. Write results
- cf.create_file(
-     ds, row_wt, col_wt, remnant,
-     clouds, precip, fog, rain, cloud, clear,
-     clean, layers, ds.overlap_function,
-     output_path="output.nc",
-     overwrite=True
- )
 ```
 
 ## Contributing
